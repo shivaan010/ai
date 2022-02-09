@@ -51,10 +51,12 @@ try:
                 i = i+1
 
         elif 'email' in command:
-            sendto = input('who to send email: ')
+            if 'email' in command:
+                command.replace('email', '')
+                print(command)
             text = input('Enter text: ')
 
-            server.sendmail('ishaans@gmail', sendto, text)
+            server.sendmail('ishaans@gmail', "sendto", text)
             print('send successfully!')
 
 except:
